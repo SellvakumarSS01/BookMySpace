@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookMySpaceApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(BookMySpaceApplication.class, args);
+        System.out.println("This is my BookMySpace Application");
     }
 
 }
