@@ -41,5 +41,16 @@ public class ResourceController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/available")
+    public ResponseEntity<List<Resource>> getAvailableResources(
+            @RequestParam Long buildingId,
+            @RequestParam Long floorId,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startTime,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime endTime
+    ) {
+        List<Resource> availableResources = resourceService.getAvailableResources(startTime, endTime, buildingId, floorId);
+        return ResponseEntity.ok(availableResources);
+    }
+
 }
 

@@ -34,5 +34,10 @@ public class ResourceService {
         resourceRepository.deleteById(id);
     }
 
+    public List<Resource> getAvailableResources(LocalDateTime startTime, LocalDateTime endTime,
+                                                Long buildingId, Long floorId) {
+        return resourceRepository.findAvailableResources(startTime, endTime, buildingId, floorId);
+    }
+
 }
 
